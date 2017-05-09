@@ -4,9 +4,9 @@
 
 Submitted by: **Ha Ta**
 
-Time spent: **X** hours spent in total
+Time spent: **15** hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: **https://afternoon-fortress-89721.herokuapp.com**
 
 ## User Stories
 
