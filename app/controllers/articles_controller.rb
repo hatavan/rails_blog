@@ -1,11 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_markdown, only: [:index, :show]
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     if params[:search]
       @articles = Article.search(params[:search]).order("created_at DESC")
     else
@@ -76,5 +75,9 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :body)
+    end
+
+    def set_markdown
+      @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     end
 end

@@ -12,7 +12,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @article.body %>
+  <%= @markdown.render(@article.body).html_safe %>
   <h3>Comments:</h3>
     <%= render @article.comments %>
     <% if user_signed_in? %>
